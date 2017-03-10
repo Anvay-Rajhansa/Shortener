@@ -77,6 +77,7 @@ public class RegisterUrlTests {
                 .header("Authorization", "Basic " + base64Credentials)
                 .content("{\"url\":\"https://www.google.co.in\"}")
                 .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.shortUrl").exists());
     }
 

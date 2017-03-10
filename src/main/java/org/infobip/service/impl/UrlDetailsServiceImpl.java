@@ -10,10 +10,10 @@ import org.infobip.helper.ShortUrlGenerator;
 import org.infobip.repository.UrlDetailsRepository;
 import org.infobip.service.UrlDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Transactional
@@ -71,6 +71,6 @@ public class UrlDetailsServiceImpl implements UrlDetailsService {
 
     private Integer getRedirectType(RegisterUrlRequest registerUrlRequest) {
         return registerUrlRequest.getRedirectType() != null ?
-                registerUrlRequest.getRedirectType() : HttpStatus.FOUND.value();
+                registerUrlRequest.getRedirectType() : HttpServletResponse.SC_MOVED_TEMPORARILY;
     }
 }

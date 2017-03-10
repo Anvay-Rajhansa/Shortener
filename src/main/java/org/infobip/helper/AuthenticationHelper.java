@@ -16,7 +16,7 @@ public class AuthenticationHelper {
     public Account loadAuthenticatedAccount() {
         Account account = accountRepository.findByAccountId(
                 SecurityContextHolder.getContext().getAuthentication().getName());
-        if(account == null) {
+        if (account == null) {
             throw new ShortenerBusinessException("Invalid logged-in account name.");
         }
         return account;
