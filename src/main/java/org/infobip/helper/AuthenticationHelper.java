@@ -1,5 +1,6 @@
 package org.infobip.helper;
 
+import org.infobip.Exception.ShortenerBusinessException;
 import org.infobip.domain.Account;
 import org.infobip.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,11 @@ public class AuthenticationHelper {
     private AccountRepository accountRepository;
 
     public Account loadAuthenticatedAccount() {
-        return accountRepository.findByAccountId(SecurityContextHolder.getContext().getAuthentication().getName());
+        Account account = accountRepository.findByAccountId(
+                SecurityContextHolder.getContext().getAuthentication().getName());
+        if(account == null) {
+            throw new ShortenerBusinessException("Invalid logged-in account name.");
+        }
+        return account;
     }
 }

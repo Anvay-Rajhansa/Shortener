@@ -35,17 +35,16 @@ public class UrlDetailsServiceImpl implements UrlDetailsService {
 
         UrlDetails urlDetails = urlDetailsRepository.findByUrlAndAccount(url, account);
         if (urlDetails != null) {
-            return new RegisterUrlResponse(shortUrlGenerator.buildShortUrl(urlDetails.getShortUrlKey()));
+            return new RegisterUrlResponse(getShortUrl(urlDetails.getShortUrlKey()));
         }
 
         String shortUrlKey = shortUrlGenerator.generateShortUrlKey();
-        Integer redirectType = registerUrlRequest.getRedirectType() != null ?
-                registerUrlRequest.getRedirectType() : HttpStatus.FOUND.value();
+        Integer redirectType = getRedirectType(urlDetails.getRedirectionType());
+
         UrlDetails newUrlDetails = new UrlDetails(url, shortUrlKey, redirectType, account);
         urlDetailsRepository.save(newUrlDetails);
 
-        String shortUrl = shortUrlGenerator.buildShortUrl(shortUrlKey);
-        return new RegisterUrlResponse(shortUrl);
+        return new RegisterUrlResponse(getShortUrl(shortUrlKey));
     }
 
     @Override
@@ -64,5 +63,13 @@ public class UrlDetailsServiceImpl implements UrlDetailsService {
     @Override
     public List<UrlDetails> getDetailsByAccount(Account account) {
         return urlDetailsRepository.findByAccount(account);
+    }
+
+    private String getShortUrl(String shortUrlKey) {
+        return shortUrlGenerator.buildShortUrl(shortUrlKey);
+    }
+
+    private Integer getRedirectType(Integer redirectType) {
+        return redirectType != null ? redirectType : HttpStatus.FOUND.value();
     }
 }
