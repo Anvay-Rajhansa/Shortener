@@ -23,7 +23,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(final Authentication authentication) throws AuthenticationException {
         String accountId = authentication.getName();
-        String password =  String.valueOf(authentication.getCredentials());
+        String password = String.valueOf(authentication.getCredentials());
 
         Account account = accountService.getAccountByAccountId(accountId);
 

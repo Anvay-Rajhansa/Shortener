@@ -1,6 +1,5 @@
 package org.infobip.Exception;
 
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -9,8 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-
-import javax.validation.ConstraintViolation;
 import java.util.Collections;
 import java.util.Map;
 import java.util.stream.Collectors;

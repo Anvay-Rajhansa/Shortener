@@ -5,7 +5,6 @@ import org.infobip.Request.RegisterUrlRequest;
 import org.infobip.Response.RegisterUrlResponse;
 import org.infobip.domain.Account;
 import org.infobip.domain.UrlDetails;
-import org.infobip.domain.repository.AccountRepository;
 import org.infobip.domain.repository.UrlDetailsRepository;
 import org.infobip.helper.AuthenticationHelper;
 import org.infobip.helper.ShortUrlGenerator;
@@ -35,7 +34,7 @@ public class UrlDetailsServiceImpl implements UrlDetailsService {
         String url = registerUrlRequest.getUrl();
 
         UrlDetails urlDetails = urlDetailsRepository.findByUrlAndAccount(url, account);
-        if(urlDetails != null) {
+        if (urlDetails != null) {
             return new RegisterUrlResponse(shortUrlGenerator.buildShortUrl(urlDetails.getShortUrlKey()));
         }
 

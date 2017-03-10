@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.Arrays;
 import java.util.List;
 
-public class CustomRedirectTypeValidator implements ConstraintValidator <ValidateRedirectType, Integer> {
+public class CustomRedirectTypeValidator implements ConstraintValidator<ValidateRedirectType, Integer> {
 
     private List<Integer> valueList;
 
