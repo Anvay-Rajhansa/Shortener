@@ -39,7 +39,7 @@ public class UrlDetailsServiceImpl implements UrlDetailsService {
         }
 
         String shortUrlKey = shortUrlGenerator.generateShortUrlKey();
-        Integer redirectType = getRedirectType(urlDetails.getRedirectionType());
+        Integer redirectType = getRedirectType(registerUrlRequest);
 
         UrlDetails newUrlDetails = new UrlDetails(url, shortUrlKey, redirectType, account);
         urlDetailsRepository.save(newUrlDetails);
@@ -69,7 +69,8 @@ public class UrlDetailsServiceImpl implements UrlDetailsService {
         return shortUrlGenerator.buildShortUrl(shortUrlKey);
     }
 
-    private Integer getRedirectType(Integer redirectType) {
-        return redirectType != null ? redirectType : HttpStatus.FOUND.value();
+    private Integer getRedirectType(RegisterUrlRequest registerUrlRequest) {
+        return registerUrlRequest.getRedirectType() != null ?
+                registerUrlRequest.getRedirectType() : HttpStatus.FOUND.value();
     }
 }
