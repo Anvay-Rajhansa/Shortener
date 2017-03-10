@@ -16,6 +16,9 @@ public class CustomRedirectTypeValidator implements ConstraintValidator<Validate
 
     @Override
     public boolean isValid(Integer integer, ConstraintValidatorContext constraintValidatorContext) {
+        if(integer == null) {
+            return true;
+        }
         return valueList.contains(integer);
     }
 }
