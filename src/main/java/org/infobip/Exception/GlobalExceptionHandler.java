@@ -1,5 +1,6 @@
 package org.infobip.Exception;
 
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -15,6 +16,8 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 @Component
 public class GlobalExceptionHandler {
+    private static Logger LOG = Logger.getLogger(GlobalExceptionHandler.class);
+
     @ExceptionHandler
     @ResponseBody
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
@@ -29,6 +32,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map handle(ShortenerBusinessException exception) {
+        LOG.error("Shortener business exception", exception);
         return Collections.singletonMap("error", exception.getMessage());
     }
 
@@ -36,6 +40,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Map handle(Exception exception) {
+        LOG.error("Exception", exception);
         return Collections.singletonMap("error", exception.getMessage());
     }
 

@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>shortener</name>
-    <description>Demo project for url shortener</description>
+    <description>HTTP service that serves to shorten URLs.</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -42,17 +42,16 @@
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
