@@ -48,7 +48,6 @@ public class AccountController {
     }
 
     @RequestMapping(value = "/statistic/{AccountId}", method = RequestMethod.GET,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public
     @ResponseBody
