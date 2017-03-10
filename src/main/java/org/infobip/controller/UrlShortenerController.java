@@ -17,6 +17,7 @@ public class UrlShortenerController {
 
     @RequestMapping(value = "/{shortUrlKey}", method = RequestMethod.GET)
     public void registerUrl(@PathVariable("shortUrlKey") String shortUrlKey, HttpServletResponse httpServletResponse) {
+        //Increasing count - That's DB update activity in GET call not looks great.
         UrlDetails urlDetails = urlDetailsService.getUrlDetailsAndIncreaseRedirectionCount(shortUrlKey);
         httpServletResponse.setHeader("Location", urlDetails.getUrl());
         httpServletResponse.setStatus(urlDetails.getRedirectionType());
