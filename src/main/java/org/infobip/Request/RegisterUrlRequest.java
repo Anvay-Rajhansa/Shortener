@@ -12,7 +12,7 @@ public class RegisterUrlRequest {
     @URL
     String url;
 
-    @ValidateRedirectType()
+    @ValidateRedirectType
     Integer redirectType;
 
     public String getUrl() {

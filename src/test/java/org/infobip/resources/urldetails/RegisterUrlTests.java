@@ -61,6 +61,16 @@ public class RegisterUrlTests {
     }
 
     @Test
+    public void test_Register_Url_Invalid_Redirect_Type_Field_Failure() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.post("/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .header("Authorization", "Basic " + base64Credentials)
+                .content("{\"url\":\"https://www.google.co.in\", \"redirectType\":307}")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
     public void test_Register_Url_Success() throws Exception {
         mvc.perform(MockMvcRequestBuilders.post("/register")
                 .contentType(MediaType.APPLICATION_JSON)
