@@ -10,7 +10,7 @@ HTTP service that serves to shorten URLs.
 ###Used framework and libraries- 
 ```
  - Spring boot  
- - Spring security(Basic authentication)    
+ - Spring security(Basic authentication)     
  - Spring data JPA  
  - H2database  
  - Apache commons-lang3  
@@ -54,6 +54,8 @@ In total, there are three exposed APIs and working of which is explained with cu
 Request - curl -H "Content-Type: application/json" -X POST -d '{"accountId":"test123"}' http://localhost:8080/account
 Response - {"status":true,"description":"Your account is opened","password":"Ya4JCDab"}
 ```
+Password provided is generated in response for given account ID which is required for next two API calls, for basic authentication.  
+
 ####/register
 ```
 Request - curl -H "Content-Type: application/json" -X POST -d '{"url":"https://www.google.co.in", "redirectType":301}' --user test123:Ya4JCDab http://localhost:8080/register
@@ -71,5 +73,4 @@ which is available in respose of /register API call.
 ```
   
  
-
 
