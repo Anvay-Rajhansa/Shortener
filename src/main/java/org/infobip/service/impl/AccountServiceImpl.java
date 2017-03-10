@@ -3,7 +3,7 @@ package org.infobip.service.impl;
 import org.infobip.Request.CreateAccountRequest;
 import org.infobip.Response.CreateAccountResponse;
 import org.infobip.domain.Account;
-import org.infobip.domain.repository.AccountRepository;
+import org.infobip.repository.AccountRepository;
 import org.infobip.helper.RandomStringGenerator;
 import org.infobip.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;

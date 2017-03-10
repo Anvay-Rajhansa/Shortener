@@ -1,7 +1,7 @@
 package org.infobip.resources.account;
 
 import org.infobip.domain.Account;
-import org.infobip.domain.repository.AccountRepository;
+import org.infobip.repository.AccountRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

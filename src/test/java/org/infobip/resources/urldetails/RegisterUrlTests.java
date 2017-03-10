@@ -2,8 +2,8 @@ package org.infobip.resources.urldetails;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.infobip.domain.Account;
-import org.infobip.domain.repository.AccountRepository;
-import org.infobip.domain.repository.UrlDetailsRepository;
+import org.infobip.repository.AccountRepository;
+import org.infobip.repository.UrlDetailsRepository;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

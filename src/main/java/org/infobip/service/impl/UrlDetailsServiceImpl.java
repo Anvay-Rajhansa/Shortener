@@ -5,7 +5,7 @@ import org.infobip.Request.RegisterUrlRequest;
 import org.infobip.Response.RegisterUrlResponse;
 import org.infobip.domain.Account;
 import org.infobip.domain.UrlDetails;
-import org.infobip.domain.repository.UrlDetailsRepository;
+import org.infobip.repository.UrlDetailsRepository;
 import org.infobip.helper.AuthenticationHelper;
 import org.infobip.helper.ShortUrlGenerator;
 import org.infobip.service.UrlDetailsService;

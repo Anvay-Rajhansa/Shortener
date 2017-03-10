@@ -1,4 +1,4 @@
-package org.infobip.domain.repository;
+package org.infobip.repository;
 
 import org.infobip.domain.Account;
 import org.infobip.domain.UrlDetails;
