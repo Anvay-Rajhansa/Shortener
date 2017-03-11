@@ -1,8 +1,8 @@
 package org.infobip.controller;
 
-import org.infobip.Exception.ShortenerBusinessException;
-import org.infobip.Request.CreateAccountRequest;
-import org.infobip.Response.CreateAccountResponse;
+import org.infobip.exception.ShortenerBusinessException;
+import org.infobip.request.CreateAccountRequest;
+import org.infobip.response.CreateAccountResponse;
 import org.infobip.domain.Account;
 import org.infobip.domain.UrlDetails;
 import org.infobip.service.AccountService;

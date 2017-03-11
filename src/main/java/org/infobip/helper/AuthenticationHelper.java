@@ -1,6 +1,6 @@
 package org.infobip.helper;
 
-import org.infobip.Exception.ShortenerBusinessException;
+import org.infobip.exception.ShortenerBusinessException;
 import org.infobip.domain.Account;
 import org.infobip.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;

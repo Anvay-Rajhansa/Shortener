@@ -1,4 +1,4 @@
-package org.infobip.Response;
+package org.infobip.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

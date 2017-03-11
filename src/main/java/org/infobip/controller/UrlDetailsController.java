@@ -1,7 +1,7 @@
 package org.infobip.controller;
 
-import org.infobip.Request.RegisterUrlRequest;
-import org.infobip.Response.RegisterUrlResponse;
+import org.infobip.request.RegisterUrlRequest;
+import org.infobip.response.RegisterUrlResponse;
 import org.infobip.service.UrlDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

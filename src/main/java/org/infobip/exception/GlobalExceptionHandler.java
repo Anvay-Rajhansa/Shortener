@@ -1,4 +1,4 @@
-package org.infobip.Exception;
+package org.infobip.exception;
 
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package org.infobip.Request;
+package org.infobip.request;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;

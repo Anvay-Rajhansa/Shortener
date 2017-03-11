@@ -1,4 +1,4 @@
-package org.infobip.Response;
+package org.infobip.response;
 
 public class RegisterUrlResponse {
     private String shortUrl;

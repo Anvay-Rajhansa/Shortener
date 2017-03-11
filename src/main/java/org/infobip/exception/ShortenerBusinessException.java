@@ -1,4 +1,4 @@
-package org.infobip.Exception;
+package org.infobip.exception;
 
 public class ShortenerBusinessException extends RuntimeException {
     public ShortenerBusinessException(String message) {

@@ -1,8 +1,8 @@
 package org.infobip.service.impl;
 
-import org.infobip.Exception.ShortenerBusinessException;
-import org.infobip.Request.RegisterUrlRequest;
-import org.infobip.Response.RegisterUrlResponse;
+import org.infobip.exception.ShortenerBusinessException;
+import org.infobip.request.RegisterUrlRequest;
+import org.infobip.response.RegisterUrlResponse;
 import org.infobip.domain.Account;
 import org.infobip.domain.UrlDetails;
 import org.infobip.helper.AuthenticationHelper;

@@ -1,7 +1,7 @@
 package org.infobip.service;
 
-import org.infobip.Request.RegisterUrlRequest;
-import org.infobip.Response.RegisterUrlResponse;
+import org.infobip.request.RegisterUrlRequest;
+import org.infobip.response.RegisterUrlResponse;
 import org.infobip.domain.Account;
 import org.infobip.domain.UrlDetails;
 
